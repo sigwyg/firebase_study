@@ -1,7 +1,10 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 
+//import "firebase/auth";
+
 module.exports = {
+  devtool: 'eval',
   entry: './src/index.ts',
   output: {
     path: __dirname + '/dist',

@@ -1,11 +1,6 @@
-// Firebase App (the core Firebase SDK) is always required and must be listed first
-import * as firebase from "firebase/app";
+import * as firebase from 'firebase/app';
+import 'firebase/firestore';
 
-// Add the Firebase products that you want to use
-import "firebase/auth";
-import "firebase/firestore";
-
-// TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
   apiKey: "AIzaSyA2SLmbnU_QpZX0sne9VCPK0CVJMFJhhT4",
   authDomain: "cogito-ergo-sum-a19a5.firebaseapp.com",
@@ -19,20 +14,24 @@ const firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig)
-//firebase.analytics();
 
-
-/**
- * test
 // Initialize Firebase with a "default" Firebase project
-var defaultProject = firebase.initializeApp(firebaseConfig);
+//var defaultProject = firebase.initializeApp(firebaseConfig);
 
-console.log(defaultProject.name);  // "[DEFAULT]"
+//firebase.analytics();
+//const storage = firebase.storage();
 
-// Option 1: Access Firebase services via the defaultProject variable
-var defaultStorage = defaultProject.storage();
-var defaultFirestore = defaultProject.firestore();
+const db = firebase.firestore();
 
-// Option 2: Access Firebase services using shorthand notation
-defaultStorage = firebase.storage();
-defaultFirestore = firebase.firestore();
+// dataを追加
+db.collection("users").add({
+    first: "Ada",
+    last: "Lovelace",
+    born: 1815
+})
+.then(function(docRef) {
+    console.log("Document written with ID: ", docRef.id);
+})
+.catch(function(error) {
+    console.error("Error adding document: ", error);
+});
