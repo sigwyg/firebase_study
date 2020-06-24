@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
-    "dev": "webpack-dev-server",
-    "typecheck": "tsc -p . --noEmit"
+    "start": "webpack-dev-server",
+    "typecheck": "tsc -p ."
   },
   "author": "sigwyg",
   "license": "ISC",
