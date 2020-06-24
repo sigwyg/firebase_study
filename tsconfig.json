@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "allowJs": true,
     "allowSyntheticDefaultImports": true, // default exportなしでのdefault importを許可
     "esModuleInterop": true, // default exportなしでもdefault importを可能にする
     "module": "esnext", // モジュールの形式: import/export。commonjsだとTree Shakingが効かない
@@ -10,7 +9,7 @@
     "strict": true,
     "lib": ["esnext"],
     "target": "esnext",
-    "noEmit": true,  // 出力を行わない: Babelに任せる
+    "noEmit": true,  // ファイル出力を行わない: webpackがts-loaderで出力する
     "strict": true,
     "forceConsistentCasingInFileNames": true, //同じファイルへの一貫性のない参照を禁止
     "skipLibCheck": true, // *.d.tsの型チェックをスキップ: 速度優先

@@ -21,7 +21,7 @@ firebase.initializeApp(firebaseConfig)
 //firebase.analytics();
 //const storage = firebase.storage();
 
-const db = firebase.firestore();
+const db:any = firebase.firestore();
 
 // dataを追加
 db.collection("users").add({
